@@ -69,6 +69,9 @@ public class InheritancePolymorphism_HFJ {
         methodOverLoading.printAnyTypeNumber(5f);
         methodOverLoading.printAnyTypeNumber(5.9);
 
+        Doggy doggy =new Doggy();
+        doggy.useOfSuper();
+
 
     }
 }
@@ -82,10 +85,14 @@ public class InheritancePolymorphism_HFJ {
    public void makeNoise() {
         System.out.println(name+" makes nose "+noise);
     }
-
    public void eat() {
         System.out.println(name +" eats "+food);
     }
+
+     public void useOfSuper() {
+         System.out.println("this is from \"super()\"");
+
+     }
 
 }
 
@@ -94,6 +101,10 @@ public class InheritancePolymorphism_HFJ {
     public void makeNoise() {
         System.out.println("(Overriden in Doggy class) " + name+" makes noise "+noise);
     }
+     public void useOfSuper() {
+        super.useOfSuper();
+         System.out.println("this is from doggy class method");
+     }
 }
 
 class Cat extends Doggy {

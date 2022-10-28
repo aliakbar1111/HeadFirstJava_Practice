@@ -67,8 +67,6 @@ class test {
         duckCount++;
         System.out.println("test no " + duckCount);
     }
-
-
 }
 /* TODO: 10/23/2022
     1-A final variable means you can’t change its value.
