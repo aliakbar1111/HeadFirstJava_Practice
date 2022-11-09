@@ -1,9 +1,8 @@
 package com.company;
 
 
-
 public class ExceptionHandling_chpr11 {
-/*todo/using something that cases exception but not handling it using try/catch what I am
+/*todo// using something that cases exception but not handling it using try/catch what I am
    doing is  announce that I am using a risky thing whatever method calls me must
    either Handle  or Declare (Duck it)
 * */
@@ -19,7 +18,7 @@ public class ExceptionHandling_chpr11 {
             exceptionHandling.testException();
         } catch (ArithmeticException e) {
             System.out.println("ArithmeticException");
-            e.printStackTrace();
+
         }
     }
 
