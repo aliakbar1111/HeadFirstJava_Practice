@@ -1,47 +1,28 @@
 package com.company;
 
-import javax.sound.midi.*;
+
 
 public class ExceptionHandling_chpr11 {
-
-}
-
-class MusicApp {
-    public static void main(String[] args) {
-
-        MusicApp musicApp = new MusicApp();
-        musicApp.play();
+/*todo/using something that cases exception but not handling it using try/catch what I am
+   doing is  announce that I am using a risky thing whatever method calls me must
+   either Handle  or Declare (Duck it)
+* */
+    void testException() throws ArithmeticException {
+        int x = 5 / 0;
+        System.out.println(x);
 
     }
 
-    void play() {
-
+    public static void main(String[] args)  {
+        ExceptionHandling_chpr11 exceptionHandling = new ExceptionHandling_chpr11();
         try {
-//            getting sequencer (CD player) from MidiSystem
-            Sequencer player = MidiSystem.getSequencer();
-//            opening sequencer
-            player.open();
-// creating sequence
-            Sequence sq = new Sequence(Sequence.PPQ, 4);
-// get a Track from sequence
-            Track track = sq.createTrack();
-
-            ShortMessage a = new ShortMessage();
-            a.setMessage(144, 1, 44, 100);
-            MidiEvent noteOn = new MidiEvent(a,1);
-//            filling track with MidiEvents
-            track.add(noteOn);
-
-            ShortMessage b = new ShortMessage();
-            b.setMessage(128, 1, 44, 100);
-            MidiEvent noteOff = new MidiEvent(a, 16);
-            track.add(noteOff);
-
-            player.setSequence(sq);
-            player.start();
-
-        } catch (Exception e) {
+            exceptionHandling.testException();
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException");
             e.printStackTrace();
         }
     }
+
 }
+
+
